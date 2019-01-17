@@ -24,6 +24,7 @@ class Utils {
       script.writeYaml file: resourceFile, data: r
       script.sh """
         oc apply -f ${resourceFile} -n ${namespace}
+        cat ${resourceFile}
         rm -f ${resourceFile}
       """
     }
